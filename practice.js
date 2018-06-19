@@ -28,6 +28,9 @@
 */
 
 // Code Here 
+function first(arr, cb){
+  return cb(arr[0]);
+}
 
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -48,6 +51,9 @@ first(names, function(firstName){
 */
 
 //Code Here
+function last(arr, cb){
+  return cb(arr[arr.length-1]);
+}
 
 // Do not edit the code below.
 last(names, function(lastName){
@@ -66,6 +72,9 @@ last(names, function(lastName){
 */
 
 //Code Here
+function multiply(num1, num2, cb){
+  return cb(num1 * num2)
+};
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -85,6 +94,15 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
+function contains(arr, name, cb){
+  for(let i = 0; i<arr.length; i++){
+    if(arr[i] === name){
+      return cb(true)
+    }else {
+      return cb(false)
+    }
+  }
+}
 
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
@@ -105,7 +123,20 @@ contains(names, 'Colt', function(result){
   Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
 */
 
+let testArr = [1,2,2,2,3,4,5,5,5,6];
+
 //Code Here
+function uniq(arr, cb){
+  let uniqArr = [];
+  for(let i = 0; i<arr.length; i++){
+    if(!uniqArr.includes(arr[i])){
+      uniqArr.push(arr[i]);
+    }
+  }
+  return cb(uniqArr)
+};
+
+
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -123,6 +154,12 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
+let someNames = ['john', 'bill', 'wannie', "bubble"];
+function each(arr, cb){
+  for(let i = 0; i<arr.length; i++){
+    return cb[i];
+  }
+};
 
 // Do not edit the code below.
 each(names, function(item, indice){
